@@ -23,7 +23,7 @@
     {% endblock %}
 
     {% block corejs %}
-        <script src="https://kit.fontawesome.com/e9c73d7092.js" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/69d5e813c2.js" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
@@ -34,7 +34,28 @@
 
     <title>B&S {% block extra_title %}{% endblock %}</title>
   <body>
-    <header class="container-fluid fixed-top"></header>
+    <header class="container-fluid fixed-top">
+      <div id="topnav" class="row bg-white pt-lg-2 d-flex">
+        <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center" >
+            <a href="{% url 'home' %}" class="nav-link">
+                <h2 class="logo-font text-black my-0"><strong><i class="fas fa-handshake-alt"></i>&nbsp;Buy & Sell</strong></h2>
+            </a>
+        </div>
+        <div class="col-12 col-lg-8 my-auto py-1 py-lg-0 text-center">
+        {% if request.user.is_authenticated %}
+            {% if request.user.is_superuser %}
+                <a href="" class="btn btn-md">My Products</a>
+            {% endif %}
+            <a href="" class="btn btn-md">My Profile</a>
+            <a href="{% url 'account_logout' %}" class="">Logout</a>
+        {% else %} 
+            <a href="{% url 'account_signup' %}" class="btn btn-md btn-black">Register</a>
+            <a href="{% url 'account_login' %}" class="btn btn-md btn-black">Login</a>
+            <a href="" class="btn btn-md btn-add-product "><i class="fa-solid fa-plus"></i>&nbsp;Add new product</a>
+        {% endif %}
+        </div>
+      </div>
+    </header>
     
     {% if messages %}
         <div class="message-container"></div>

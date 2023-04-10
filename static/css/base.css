@@ -1,0 +1,44 @@
+html{
+    height: 100%;
+}
+
+/* from Bulma */
+.icon {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.logo-font {
+    text-transform: uppercase;
+}
+
+
+.btn-black {
+    background: black;
+    color: white;
+}
+
+
+.btn-black:hover,
+.btn-black:active,
+.btn-black:focus {
+    background: #222;
+    color: white;
+}
+
+.text-black {
+    color: #000 !important;
+}
+
+.btn-add-product{
+   background-color: #ABC4AA; 
+}
+
+.btn-add-product:hover,
+.btn-add-product:active{
+    text-decoration: underline;
+    color: #675D50;
+}
