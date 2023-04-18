@@ -2,16 +2,15 @@
 {% load static %}
 
 {% block content %}
-<div class="container-fluid mt-3">
+<div class="container-fluid mt-3" style="background-color: #fff;"> 
     <div class="row" style="background-color: #fff;">
-        <div class="col text-center mt-3"> 
-            <h2>Products</h2>
+        <div class="col-12 text-center mt-3"> 
+            <h2 class="uppercase">Products</h2>
             <hr class="w-50 mb-1">
         </div>
     </div>
-    <div class="row" style="background-color: #fff;">
+    <div class="row mt-5" style="background-color: #fff;">
         <div class="product-container col-10 offset-1">
-            <div class="row mt-1 mb-2"></div>
             <div class="row ">
                 {% for product in products %}
                     <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
